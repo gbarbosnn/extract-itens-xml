@@ -31,7 +31,7 @@ export default function Home() {
     if (selectedFile) {
       handleFileSelect(selectedFile)
     }
-  }
+  } 
 
   const processXML = async () => {
     if (!file) return
@@ -155,27 +155,25 @@ export default function Home() {
             </div>
           )}
 
-          {file && (
-            <div>
-              <span>Arquivo selecionado: <strong>{file.name}</strong></span>
-            </div>
-          )}
-
-
           {!isSuccess && file && !isProcessing && (
-            <div className="flex gap-3">
-              <Button
-                onClick={processXML}
-                size="lg"
-                className="flex-1 text-white font-semibold"
-                style={{ backgroundColor: "#0045B5" }}
-              >
-                Processar XML
-              </Button>
-              <Button onClick={resetForm} variant="outline" size="lg" className="px-6 bg-transparent">
-                Limpar
-              </Button>
-            </div>
+            <>
+              <div>
+                <span>Arquivo selecionado: <strong>{file.name}</strong></span>
+              </div>
+              <div className="flex gap-3">
+                <Button
+                  onClick={processXML}
+                  size="lg"
+                  className="flex-1 text-white font-semibold"
+                  style={{ backgroundColor: "#0045B5" }}
+                >
+                  Processar XML
+                </Button>
+                <Button onClick={resetForm} variant="outline" size="lg" className="px-6 bg-transparent">
+                  Limpar
+                </Button>
+              </div>
+            </>
           )}
         </div>
       </div>
